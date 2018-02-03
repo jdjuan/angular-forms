@@ -1,3 +1,4 @@
+import { Hero } from './hero.model';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  model: Hero;
+
+  constructor() {
+    this.model = new Hero(18, 'Dr IQ', 'xRay', 'Chuck Overstreet');
+  }
+
+  onSubmit() {
+    console.log(this.model);
+  }
 }
